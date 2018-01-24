@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_piece.c                                        :+:      :+:    :+:   */
+/*   piece_adjust.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/23 18:51:05 by anazar            #+#    #+#             */
-/*   Updated: 2017/10/23 18:51:24 by anazar           ###   ########.fr       */
+/*   Created: 2017/10/26 00:32:10 by anazar            #+#    #+#             */
+/*   Updated: 2017/10/26 00:50:52 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <filler.h>
 
-char		*get_piece(int num_rows)
+void	add_to_all(t_piece *piece, int fac)
 {
-	char	*str;
-	char	*out;
 	int		i;
 
 	i = 0;
-	out = ft_strnew(0);
-	while (i < num_rows)
+	while (i < piece->num_indices)
 	{
-		get_next_line(0, &str);
-		str = ft_strjoinfree(str, ft_strdup("\n"));
-		out = ft_strjoinfree(out, str);
+		piece->indices[i] += fac;
 		++i;
 	}
-	return (out);
+}
+
+void	piece_adjust(t_piece *piece, int num)
+{
+	add_to_all(piece, num);
 }

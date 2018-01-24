@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_board_x.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/23 18:48:28 by anazar            #+#    #+#             */
+/*   Updated: 2017/10/23 18:48:38 by anazar           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <filler.h>
 
-int get_board_x(char *str)
+int		get_board_x(char *str)
 {
-  int pos;
+	int	pos;
 
-  pos = 0;
-  while (ft_isalpha(str[pos]))
-    ++pos;
-  str += pos;
-  return (ft_atoi(str));
+	pos = 0;
+	while (ft_isalpha(str[pos]))
+		++pos;
+	str += pos;
+	return (ft_atoi(str));
 }
